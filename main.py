@@ -1,0 +1,1 @@
+print("a chto pisat to?))0)00)")
