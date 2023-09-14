@@ -1,6 +1,31 @@
-print("a chto pisat to?))0)00)")
+import random
 
-print("hello world")
+# Какие могут быть вопросы и ответы которые виводи рандом
+questions = ["Привет", "Как дела?", "Какая погода за окном?", "Как тебя зовут?", "Сколько тебе дней?", "Сколько времени?","Кто лучший программист?"]
+answers = [
+    ["Приветули", "Шо ты?"],
+    ["Пойёт", "Суперски", "Такое, а у вас?"],
+    ["Солнечно", "Дождь идет", "Снегом замело"],
+    ["Меня зовут Бот.", "Я - твой помощник вообще-то", "Раян Гослинг"],
+    ["Шо?, типо,когда у меня др?", "6574893929756564"],
+    ["Сейчас время 16:30( 4:30 p.m.)", "На часах нули ", "Время тренеровки!!! "],
+    ["Настюша", "Настенька","Анастасия"]
+]
 
+# Прога ищет вопрос и возвращает рандобный ответ 
+def get_response(question):
+    
+    if question in questions:
+        index = questions.index(question)
+        response_options = answers[index]
+        response = random.choice(response_options)
+    else:
+        response = "Извините, я не понимаю ваш вопрос."
 
+    return response
 
+# Пример
+while True:
+    user_input = input("Вы: ")
+    response = get_response(user_input)
+    print("Ботик:", response)
